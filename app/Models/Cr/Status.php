@@ -12,8 +12,19 @@ class Status extends Model
     public $timestamps = false;
 
 
-    public function User()
+    public function Users()
     {
     	return hasMany("App\Models\Cr\User","id_status");
     }
+
+    public function Menus()
+    {
+    	return hasMany("App\Models\Cr\Menu","id_status");
+    }
+
+    public function Pages()
+    {
+    	return hasMany("App\Models\Cr\Page","id_status");
+    }
+
 }
