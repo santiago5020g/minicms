@@ -43,21 +43,28 @@ CKEDITOR.config.extraPlugins = 'sourcedialog';
 <script type="text/javascript">
     $("#edit").click(function(){
 
-        var action = $("#editor1").attr("contenteditable");
+        var action = $(".infor").attr("contenteditable");
         if(action == "true")
         {
-            $("#editor1").attr("contenteditable", false);
+            for(name in CKEDITOR.instances)
+            {
+                CKEDITOR.instances[name].destroy(true);
+            }
+
+            $(".infor").attr("contenteditable", false);
             $("#savePage").hide();
             $("#edit").text("Habilitar edicion");
-            CKEDITOR.instances.editor1.destroy();
             return;
         }
 
         else if(action == "false")
         {
-            var editor = CKEDITOR.inline( 'editor1' );
+            $(".infor").each(function(){
+            var editor = CKEDITOR.inline( this );
             CKFinder.setupCKEditor( editor );
-            $("#editor1").attr("contenteditable", true);
+            });
+            $(".infor").attr("contenteditable", true);
+ 
             $("#savePage").show();
             $("#edit").text("Deshabilitar edicion");
 

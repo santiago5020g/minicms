@@ -15,16 +15,27 @@ $(document).ready(function(){
 });
 
 
-// funcion para habilitar y desabilitar admin
+// funcion para habilitar y desabilitar adminn
 	var savePage = function(){
 		var idpage = $("#idPage").val();
-		var content = CKEDITOR.instances['editor1'].getData();
+		var content = [];
+		var section = [];
+
+		for(name in CKEDITOR.instances)
+            {
+				content.push(CKEDITOR.instances[name].getData() );
+				
+			}
+		$('input[name="section[]"]').each(function() {
+    	 	section.push($(this).val()); 
+		});
+		
 		$("#savePage").attr("disabled", true);
-		insertContent(idpage, content);	
+		insertContent(idpage, content, section);	
 	}
 
-var insertContent = function(idpage,content){
-	datos = {"idpage":idpage , "content": content };	
+var insertContent = function(idpage,content, section){
+	datos = {"idpage":idpage , "content": content, "section": section };	
 		$.ajax({
 			url: "page",
 			method: 'POST',		

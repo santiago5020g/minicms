@@ -15,11 +15,16 @@ class Page extends Model
 
     public function status()
     {
-    	return belongsTo("App\Models\Cr\Statuses","id_status");
+    	return $this->belongsTo("App\Models\Cr\Statuses","id_status");
     }
 
     public function Menu()
     {
-    	return belongsTo("App\Models\Cr\Menu","id_menu");
+    	return $this->belongsTo("App\Models\Cr\Menu","id_menu");
+    }
+
+    public function sections()
+    {
+    	return $this->hasMany("App\Models\Cr\Section","id_page");
     }
 }
