@@ -9,6 +9,7 @@
 <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
 
 
+
 <script>
 // Turn off automatic editor creation first.
 CKEDITOR.config.contentsCss = [ 
@@ -64,7 +65,6 @@ CKEDITOR.config.extraPlugins = 'sourcedialog';
             CKFinder.setupCKEditor( editor );
             });
             $(".infor").attr("contenteditable", true);
- 
             $("#savePage").show();
             $("#edit").text("Deshabilitar edicion");
 
