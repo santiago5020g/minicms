@@ -45,4 +45,36 @@
         top: 80px;
         z-index: 99999;
     }
+
+    .left3 {
+        float: right;
+        right: 0 !important;
+        height: auto;
+        margin-top: 250px;
+        padding: 0em;
+        position: fixed;
+        top: 70px;
+        z-index: 99999;
+    }
+
+    .column header {
+			
+		
+		}
+
+		.column {
+			
+			/* cursor: move; */
+		}
+
+        .column.sortable-moving {
+            opacity: .4;
+        }
+
+		.column.sortable-over,
+		#columns-dragOver .column.sortable-over,
+		#columns-dragEnd .column.sortable-over,
+		#columns-almostFinal .column.sortable-over {
+			border: 2px dashed #000;
+		}
 </style>

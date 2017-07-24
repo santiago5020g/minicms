@@ -1,14 +1,13 @@
 $(document).ready(function(){
 
-
-	$("#savePage").click(function(){
-
-		$.ajaxSetup({
+	$.ajaxSetup({
 	        headers: {
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
 
+
+	$("#savePage").click(function(){
 		savePage();
 	});
 

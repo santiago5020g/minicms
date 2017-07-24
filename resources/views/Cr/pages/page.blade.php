@@ -16,34 +16,6 @@
 @stop
 
 
-<style>
-.column header {
-			
-		
-		}
-
-		.column {
-			
-			/* cursor: move; */
-		}
-
-        .column.sortable-moving {
-            opacity: .4;
-        }
-
-		.column.sortable-over,
-		#columns-dragOver .column.sortable-over,
-		#columns-dragEnd .column.sortable-over,
-		#columns-almostFinal .column.sortable-over {
-			border: 2px dashed #000;
-		}
-
-</style>
-
-
-
-
-
 @foreach ($page->sections as $i=> $section)
 	<input type="hidden" name="section[]" value="{{ $section->id }}">
 	
