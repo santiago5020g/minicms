@@ -68,7 +68,6 @@ CKEDITOR.editorConfig = function( config ) {
 		'toolbar,' +
 		'undo,' +
 		'wysiwygarea';
-	// %REMOVE_END%
 };
 
 // %LEAVE_UNMINIFIED% %REMOVE_LINE%

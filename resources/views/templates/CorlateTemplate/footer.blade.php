@@ -6,7 +6,7 @@
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/wow.min.js') }}"></script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
+
 
 
 
@@ -25,6 +25,15 @@ CKEDITOR.config.contentsCss = [
 '{{ asset("images/ico/apple-touch-icon-72-precomposed.png") }}',
 '{{ asset("images/ico/apple-touch-icon-57-precomposed.png") }}'
 ];
+
+
+CKEDITOR.config.filebrowserBrowseUrl = '{{ asset("kcfinder/browse.php?opener=ckeditor&type=files") }}';
+CKEDITOR.config.filebrowserImageBrowseUrl = '{{ asset("kcfinder/browse.php?opener=ckeditor&type=images") }}';
+CKEDITOR.config.filebrowserFlashBrowseUrl = '{{ asset("kcfinder/browse.php?opener=ckeditor&type=flash") }}';
+CKEDITOR.config.filebrowserUploadUrl = '{{ asset("kcfinder/upload.php?opener=ckeditor&type=files") }}';
+CKEDITOR.config.filebrowserImageUploadUrl = '{{ asset("kcfinder/upload.php?opener=ckeditor&type=images") }}';
+CKEDITOR.config.filebrowserFlashUploadUrl = '{{ asset("kcfinder/upload.php?opener=ckeditor&type=flash") }}';
+
 
 CKEDITOR.scriptLoader.load( '{{ asset("js/jquery.js") }}' );
 CKEDITOR.scriptLoader.load( '{{ asset("js/bootstrap.min.js") }}' );
@@ -62,7 +71,6 @@ CKEDITOR.config.extraPlugins = 'sourcedialog';
         {
             $(".infor").each(function(){
             var editor = CKEDITOR.inline( this );
-            CKFinder.setupCKEditor( editor );
             });
             $(".infor").attr("contenteditable", true);
             $("#savePage").show();
