@@ -5,13 +5,16 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
+});
 
 
 	$("#savePage").click(function(){
 		savePage();
 	});
 
-});
+	$("#addSection").click(function(){
+		addSection();
+	});
 
 
 // funcion para habilitar y desabilitar adminn
@@ -25,7 +28,8 @@ $(document).ready(function(){
 				content.push(CKEDITOR.instances[name].getData() );
 				
 			}
-		$('input[name="section[]"]').each(function() {
+
+		$('input[name="section[]"]').each(function(index) {
     	 	section.push($(this).val()); 
 		});
 		
@@ -34,7 +38,8 @@ $(document).ready(function(){
 	}
 
 var insertContent = function(idpage,content, section){
-	datos = {"idpage":idpage , "content": content, "section": section };	
+	var _token = $("input[name='_token']").val();
+	datos = {"idpage":idpage , "content": content, "section": section, _token: _token };	
 		$.ajax({
 			url: "page",
 			method: 'POST',		
@@ -48,5 +53,15 @@ var insertContent = function(idpage,content, section){
 			$("#savePage").attr("disabled", false);
 
 		});
+}
+
+
+function addSection()
+{	
+	$(' <div class="column"> <input type="hidden" name="section[]" value=""> <div name="editor[]" class="infor" contenteditable="false"> </div>').prependTo('#sections');	
+	Sortable({
+	els: '.column'
+	});
+
 }
 

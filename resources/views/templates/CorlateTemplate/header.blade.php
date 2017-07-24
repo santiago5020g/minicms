@@ -39,7 +39,7 @@
         float: right;
         right: 0 !important;
         height: auto;
-        margin-top: 200px;
+        margin-top: 150px;
         padding: 0em;
         position: fixed;
         top: 80px;
@@ -50,7 +50,7 @@
         float: right;
         right: 0 !important;
         height: auto;
-        margin-top: 250px;
+        margin-top: 200px;
         padding: 0em;
         position: fixed;
         top: 70px;
