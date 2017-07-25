@@ -82,4 +82,9 @@ CKEDITOR.config.extraPlugins = 'sourcedialog';
     });
 </script>
 
+<script>
+    var URL = "{{ url('/') }}";
+</script>
+
+
 @yield('footer_scripts')

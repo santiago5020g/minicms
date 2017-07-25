@@ -13,8 +13,12 @@ class PageController extends Controller
 
     public function page($id)
     {
-    	$this->params['page'] = Page::with("sections")
-		->where("id",$id)->first();
+    	$this->params['page'] = Page::with(["sections" => function($query){
+			$query->where('id_status', 1);
+			$query->orderBy('number', 'asc');
+		}])
+		->where("id",$id)
+		->first();
     	return view("Cr/pages/page",["page" => $this->params['page'] ]);
     }
 
@@ -42,6 +46,27 @@ class PageController extends Controller
 
 		$this->params['status'] = true;
     	$this->params['info']["message"] = "Guardado!";
+    	return json_encode($this->params['info']);
+    }
+
+
+	public function disableSection(Request $request)
+    {	
+
+    	$this->params['request'] = $request;
+		$this->params['section'] = Section::where("id",$this->params['request']->section)->first();
+		$this->params['section']->id_status = 2;
+		$this->params['status']  = $this->params['section']->save();
+		
+		if($this->params['status'])
+		{
+			$this->params['info']["message"] = "Seccion deshabilitada correctamente";
+		}
+		else
+		{
+			$this->params['info']["message"] = "Error al deshabilitar la seccion";
+		}
+    	
     	return json_encode($this->params['info']);
     }
 }

@@ -41,7 +41,7 @@ var insertContent = function(idpage,content, section){
 	var _token = $("input[name='_token']").val();
 	datos = {"idpage":idpage , "content": content, "section": section, _token: _token };	
 		$.ajax({
-			url: "page",
+			url: URL+"/savePage",
 			method: 'POST',		
 			data: datos
 		})
@@ -51,6 +51,7 @@ var insertContent = function(idpage,content, section){
 			console.log(result);
 			alert(result.message);
 			$("#savePage").attr("disabled", false);
+			window.location.reload();
 
 		});
 }
@@ -65,3 +66,29 @@ function addSection()
 
 }
 
+
+
+var disableSection = function(section){
+	var _token = $("input[name='_token']").val();
+	if(confirm('¿Estas seguro de deshabilitar la seccion ?'))
+		{
+			var idsection = $(section).attr("id");
+			$(section).remove();
+			if(!idsection)
+			{
+				return;
+			}
+			datos = {"section": idsection, _token: _token };	
+				$.ajax({
+					url: URL+"/disableSection",
+					method: 'POST',		
+					data: datos
+				})
+				.done(function(result) {
+					//console.log(result);
+					result = JSON.parse(result);
+					console.log(result);
+					//alert(result.message);
+				});
+		}
+}
