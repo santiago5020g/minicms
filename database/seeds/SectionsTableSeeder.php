@@ -697,7 +697,7 @@ class SectionsTableSeeder extends Seeder
 
         $sections = [
             [
-                'name' => 'section1',
+                'name' => 'section1Corlate',
                 'content' => $section1,
                 'number' => 1,
                 'id_status' => 1,
@@ -705,7 +705,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section2',
+                'name' => 'section2Corlate',
                 'content' => $section2,
                 'number' => 2,
                 'id_status' => 1,
@@ -713,7 +713,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section3',
+                'name' => 'section3Corlate',
                 'content' => $section3,
                 'number' => 3,
                 'id_status' => 1,
@@ -721,7 +721,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section4',
+                'name' => 'section4Corlate',
                 'content' => $section4,
                 'number' => 4,
                 'id_status' => 1,
@@ -729,7 +729,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section5',
+                'name' => 'section5Corlate',
                 'content' => $section5,
                 'number' => 5,
                 'id_status' => 1,
@@ -737,7 +737,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section6',
+                'name' => 'section6Corlate',
                 'content' => $section6,
                 'number' => 6,
                 'id_status' => 1,
@@ -745,7 +745,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section7',
+                'name' => 'section7Corlate',
                 'content' => $section7,
                 'number' => 7,
                 'id_status' => 1,
@@ -753,7 +753,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section8',
+                'name' => 'section8Corlate',
                 'content' => $section8,
                 'number' => 8,
                 'id_status' => 1,
@@ -761,7 +761,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section9',
+                'name' => 'section9Corlate',
                 'content' => $section9,
                 'number' => 9,
                 'id_status' => 1,
@@ -769,7 +769,7 @@ class SectionsTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'section10',
+                'name' => 'section10Corlate',
                 'content' => $section10,
                 'number' => 10,
                 'id_status' => 1,

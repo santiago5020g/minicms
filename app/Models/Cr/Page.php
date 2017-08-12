@@ -18,7 +18,7 @@ class Page extends Model
     	return $this->belongsTo("App\Models\Cr\Statuses","id_status");
     }
 
-    public function Menu()
+    public function menu()
     {
     	return $this->belongsTo("App\Models\Cr\Menu","id_menu");
     }

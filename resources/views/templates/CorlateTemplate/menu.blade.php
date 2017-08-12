@@ -40,7 +40,19 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>                      
+                        @foreach ($page->pages as $pageMenu)
+                            @if($page->id == $pageMenu->id)
+                                <li id="{{ $pageMenu->id }}" class="active menuPage">
+                                    <input type="hidden" name="menuPage[]" value="{{ $pageMenu->id }}">
+                                    <a href="{{ url('page/'.$pageMenu->id) }}">{{ $pageMenu->menu->name }}</a>
+                                </li>
+                            @else
+                                <li id="{{ $pageMenu->id }}" class="menuPage">
+                                    <input type="hidden" name="menuPage[]"  value="{{ $pageMenu->id }}">
+                                    <a href="{{ url('page/'.$pageMenu->id) }}">{{ $pageMenu->menu->name }}</a>
+                                </li>
+                            @endif
+                        @endforeach                      
                     </ul>
                 </div>
             </div><!--/.container-->

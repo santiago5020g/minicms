@@ -14,10 +14,12 @@ class MenusTableSeeder extends Seeder
          $menus = [
             [
                 'name' => 'inicio',
+                'position' => 1,
                 'id_status' => 1
             ],
             [
                 'name' => 'contactenos',
+                'position' => 2,
                 'id_status' => 1
             ]
         ];

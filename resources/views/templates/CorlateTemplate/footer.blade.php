@@ -50,37 +50,6 @@ CKEDITOR.config.extraPlugins = 'sourcedialog';
 
 </script>
 
-<script type="text/javascript">
-    $("#edit").click(function(){
-
-        var action = $(".infor").attr("contenteditable");
-        if(action == "true")
-        {
-            for(name in CKEDITOR.instances)
-            {
-                CKEDITOR.instances[name].destroy(true);
-            }
-
-            $(".infor").attr("contenteditable", false);
-            $("#savePage").hide();
-            $("#edit").text("Habilitar edicion");
-            return;
-        }
-
-        else if(action == "false")
-        {
-            $(".infor").each(function(){
-            var editor = CKEDITOR.inline( this );
-            });
-            $(".infor").attr("contenteditable", true);
-            $("#savePage").show();
-            $("#edit").text("Deshabilitar edicion");
-
-            return
-        }
-        
-    });
-</script>
 
 <script>
     var URL = "{{ url('/') }}";

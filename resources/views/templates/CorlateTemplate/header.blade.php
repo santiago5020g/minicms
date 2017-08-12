@@ -25,37 +25,49 @@
 
 
 <style type="text/css">
-        .left {
+
+    .left, .left2, .left3, .left4, .left5, .left6
+    {
         float: right;
         right: 0 !important;
         height: auto;
+        position: fixed;
+        top: 70px;
+        z-index: 99999;
+    }
+
+    .left 
+    {
         margin-top: 100px;
-        padding: 0em;
-        position: fixed;
-        top: 70px;
-        z-index: 99999;
     }
 
-    .left2 {
-        float: right;
-        right: 0 !important;
-        height: auto;
+    .left2 
+    {
+       
         margin-top: 150px;
-        padding: 0em;
-        position: fixed;
-        top: 80px;
-        z-index: 99999;
     }
 
-    .left3 {
-        float: right;
-        right: 0 !important;
-        height: auto;
+    .left3 
+    {
+       
         margin-top: 200px;
-        padding: 0em;
-        position: fixed;
-        top: 70px;
-        z-index: 99999;
+    }
+
+    .left4 
+    {
+       
+        margin-top: 250px;
+    }
+
+    .left5 
+    {
+       
+        margin-top: 300px;
+    }
+
+    .left6 
+    {
+        margin-top: 350px;
     }
 
     .column header {

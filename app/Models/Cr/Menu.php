@@ -15,11 +15,11 @@ class Menu extends Model
 
     public function status()
     {
-    	return belongsTo("App\Models\Cr\Statuses","id_status");
+    	return $this->belongsTo("App\Models\Cr\Statuses","id_status");
     }
 
-    public function Pages()
+    public function pages()
     {
-    	return hasMany("App\Models\Cr\Page","id_menu");
+    	return $this->hasMany("App\Models\Cr\Page","id_menu");
     }
 }

@@ -16,12 +16,14 @@ class PagesTableSeeder extends Seeder
             [
                 'name' => 'inicio',
                 'id_status' => 1,
-                'id_menu' => 1
+                'id_menu' => 1,
+                'position' => 1
             ],
             [
                 'name' => 'contactenos',
                 'id_status' => 1,
-                'id_menu' => 1
+                'id_menu' => 2,
+                'position' => 2
             ]
         ];
 
